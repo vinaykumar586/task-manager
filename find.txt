@@ -1,0 +1,28 @@
+const db = client.db(databaseName)
+    db.collection('users').insertOne({
+        _id: id,
+        name:"vinaykumar",
+        age:25,
+    }, (error, result) =>{
+        if(error){
+            console.log("Unable insert the records")
+        } else {
+            console.log(result)
+        }
+    })
+    db.collection('tasks').insertMany([{
+        description:"Headre part added",
+        completed:true,
+    },{
+        description:"bodypartadded",
+        completed:false,
+    },{
+        description:"footer part added",
+        completed:true,
+    }], (error, result) =>{
+        if(error){
+            console.log("Unable insert the records")
+        } else {
+            console.log(result)
+        }
+    })
